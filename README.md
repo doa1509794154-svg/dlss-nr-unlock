@@ -53,10 +53,9 @@ Double-click `2-Uninstall.cmd`. Any file that was overwritten is backed up first
 | File | Purpose |
 | --- | --- |
 | `dinput8.dll` | GPU spoof proxy. Reports the GPU as Blackwell (arch 0x1B0) and fakes the PCI id of an RTX 5090 (0x2B8510DE). |
-| `winmm.dll` + `033-loader.ini` | Generic injector. Loads the proxy into the process named in `033-loader.ini` (`Targets=`). |
+| `winmm.dll` | Generic injector. It loads the proxy into the game process. |
 | `nvngx_dlssnr.dll` | Patched Neural Rendering runtime (310.8.0). The untouched official 310.9.16 refuses to create the feature on Ada (0xBAD00002) — this patched build is what actually runs. |
-| `MetroNRFeature18Probe.on` | Feature switches read by the proxy. |
-| `MetroNRDirectSnippet.on` | Feature switches read by the proxy. |
+| `MetroNRFeature18Probe.on`, `MetroNRDirectSnippet.on` | Feature switches read by the proxy; written by the installer. |
 | `.nr-unlock.json` | Install record used by the uninstaller. |
 
 ## How it works (one line)
